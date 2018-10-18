@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\IRepository.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Monto.cs" />
     <Compile Include="Entidades\TipoDeCuentas.cs" />
@@ -90,7 +91,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
     <Folder Include="Reportes\" />
     <Folder Include="UI\" />
   </ItemGroup>
