@@ -14,6 +14,7 @@ namespace MontoReportes.Entidades
         public string Descripsion { get; set; }
         public string Tipo { get; set; }
         public float monto { get; set; }
+        public DateTime FechaDeVencimineto { get; set; }
 
 
         public Monto()
@@ -22,6 +23,7 @@ namespace MontoReportes.Entidades
             Descripsion = string.Empty;
             Tipo = string.Empty;
             monto = 0;
+            FechaDeVencimineto = DateTime.Now;
         }
     }
 }

@@ -57,16 +57,22 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Monto.cs" />
     <Compile Include="Entidades\TipoDeCuentas.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm1.Designer.cs">
+      <DependentUpon>MainForm1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UI\RCuentasReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RCuentasReportes.Designer.cs">
+      <DependentUpon>RCuentasReportes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm1.resx">
+      <DependentUpon>MainForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,7 +82,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\RCuentasReportes.resx">
+      <DependentUpon>RCuentasReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,7 +103,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reportes\" />
-    <Folder Include="UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-math-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
