@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,10 +44,13 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
+            this.NuevaCuentasbutton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontonumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,6 +104,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.NuevaCuentasbutton);
             this.groupBox1.Controls.Add(this.Addbutton);
             this.groupBox1.Controls.Add(this.TipocomboBox);
             this.groupBox1.Controls.Add(this.label4);
@@ -185,11 +190,25 @@
             // Addbutton
             // 
             this.Addbutton.Image = global::MontoReportes.Properties.Resources.icons8_plus_math_48;
-            this.Addbutton.Location = new System.Drawing.Point(230, 26);
+            this.Addbutton.Location = new System.Drawing.Point(282, 22);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(75, 33);
             this.Addbutton.TabIndex = 3;
             this.Addbutton.UseVisualStyleBackColor = true;
+            // 
+            // NuevaCuentasbutton
+            // 
+            this.NuevaCuentasbutton.Location = new System.Drawing.Point(212, 22);
+            this.NuevaCuentasbutton.Name = "NuevaCuentasbutton";
+            this.NuevaCuentasbutton.Size = new System.Drawing.Size(64, 32);
+            this.NuevaCuentasbutton.TabIndex = 4;
+            this.NuevaCuentasbutton.Text = "Nueva ";
+            this.NuevaCuentasbutton.UseVisualStyleBackColor = true;
+            this.NuevaCuentasbutton.Click += new System.EventHandler(this.NuevaCuentasbutton_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // RCuentasReportes
             // 
@@ -214,6 +233,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +256,7 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button NuevaCuentasbutton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

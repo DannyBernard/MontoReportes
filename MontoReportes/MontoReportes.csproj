@@ -71,6 +71,12 @@
     <Compile Include="UI\RCuentasReportes.Designer.cs">
       <DependentUpon>RCuentasReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\RTipoDeCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RTipoDeCuentas.Designer.cs">
+      <DependentUpon>RTipoDeCuentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm1.resx">
       <DependentUpon>MainForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="UI\RCuentasReportes.resx">
       <DependentUpon>RCuentasReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RTipoDeCuentas.resx">
+      <DependentUpon>RTipoDeCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
