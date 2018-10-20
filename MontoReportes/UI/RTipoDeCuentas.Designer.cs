@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -48,12 +48,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
-            // numericUpDown1
+            // IDnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(142, 39);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(75, 22);
-            this.numericUpDown1.TabIndex = 1;
+            this.IDnumericUpDown.Location = new System.Drawing.Point(142, 39);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(75, 22);
+            this.IDnumericUpDown.TabIndex = 1;
             // 
             // label2
             // 
@@ -64,12 +64,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripcion";
             // 
-            // textBox1
+            // DescripciontextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 22);
-            this.textBox1.TabIndex = 3;
+            this.DescripciontextBox.Location = new System.Drawing.Point(142, 95);
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.Size = new System.Drawing.Size(219, 22);
+            this.DescripciontextBox.TabIndex = 3;
             // 
             // Nuevobutton
             // 
@@ -124,13 +124,13 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.label1);
             this.Name = "RTipoDeCuentas";
             this.Text = "RTipoDeCuentas";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,9 +139,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button button3;

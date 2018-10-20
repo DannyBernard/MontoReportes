@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MontoReportes.Entidades
 {
-    class TipoDeCuentas
+  public  class TipoDeCuentas
     {
         [Key]
         public int TipoID { get; set; }
