@@ -15,6 +15,7 @@ namespace MontoReportes.UI
     public partial class RCuentasReportes : Form
     {
         private RepositoryBase<Monto> repositoryBase;
+        public List<CuentaDetalle>Detalle { get; set; }
         public RCuentasReportes()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace MontoReportes.UI
             monto.MontoId = Convert.ToInt32(IDnumericUpDown.Value);
             monto.Descripsion = DepcripciontextBox.Text;
             monto.monto = Convert.ToSingle(MontonumericUpDown.Value);
+            monto.FechaDeVencimineto = FechadateTimePicker.Value;
             return monto;
         }
 
@@ -40,6 +42,7 @@ namespace MontoReportes.UI
             IDnumericUpDown.Value = monto.MontoId;
             DepcripciontextBox.Text = monto.Descripsion;
             MontonumericUpDown.Value = Convert.ToDecimal(monto.monto);
+            FechadateTimePicker.Value = monto.FechaDeVencimineto;
         }
 
         private bool ExiteEnDb()
@@ -48,6 +51,12 @@ namespace MontoReportes.UI
             Monto monto = repositoryBase.Buscar((int)IDnumericUpDown.Value);
 
             return (monto != null);
+        }
+        public void LlenaComboBox()
+        {
+            RepositoryBase<Monto> repository = new RepositoryBase<Monto>();
+            TipocomboBox.DataSource = repository.GetList(x => true);
+            TipocomboBox.ValueMember = "Descripcion";
         }
 
         private bool Validar()
@@ -71,6 +80,104 @@ namespace MontoReportes.UI
 
             rTipoDeCuentas.Show();
             
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            repositoryBase = new RepositoryBase<Monto>();
+            bool paso = false;
+            Monto monto;
+            if (!Validar())
+                return;
+            monto = LlenaClase();
+            if (IDnumericUpDown.Value == 0)
+                paso = repositoryBase.Guardar(monto);
+            else
+            {
+                if (!ExiteEnDb())
+                {
+                    MessageBox.Show("No se puede Modificar no exite", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                paso = repositoryBase.Modificar(monto);
+            }
+            Limpiar();
+
+            if (paso)
+                MessageBox.Show("Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                MessageBox.Show("Fallo no se guardo", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            repositoryBase = new RepositoryBase<Monto>();
+            errorProvider1.Clear();
+            int id;
+            int.TryParse(IDnumericUpDown.Text, out id);
+            if (repositoryBase.Eliminar(id))
+            {
+                Limpiar();
+                MessageBox.Show("Eliminado con Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                errorProvider1.SetError(IDnumericUpDown, "no se puedo eliminar");
+            }
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            int id;
+            repositoryBase = new RepositoryBase<Monto>();
+            Monto monto = new Monto();
+            int.TryParse(IDnumericUpDown.Text, out id);
+            monto = repositoryBase.Buscar(id);
+            if (monto != null)
+            {
+                errorProvider1.Clear();
+                LlenaCampo(monto);
+                MessageBox.Show("Encotrado");
+            }
+            else
+            {
+                MessageBox.Show("No se Encotro");
+            }
+
+        }
+        private void CargarGrid()
+        {
+            CuentadataGridView.DataSource = null;
+            CuentadataGridView.DataSource = this.Detalle;
+        }
+
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            RCuentasReportes rCuentas = new RCuentasReportes();
+            if (CuentadataGridView.DataSource != null)
+                this.Detalle = (List<CuentaDetalle>)CuentadataGridView.DataSource;
+            this.Detalle.Add(
+                new CuentaDetalle
+                (
+                    ID: 0,
+                    CuentaID: (int)IDnumericUpDown.Value,
+                    TipoCuenta: TipocomboBox.Text
+
+                 )
+                    );
+            CargarGrid();
+            DepcripciontextBox.Focus();
+            DepcripciontextBox.Clear();
         }
     }
 }

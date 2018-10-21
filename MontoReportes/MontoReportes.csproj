@@ -55,6 +55,7 @@
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositoryBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\CuentaDetalle.cs" />
     <Compile Include="Entidades\Monto.cs" />
     <Compile Include="Entidades\TipoDeCuentas.cs" />
     <Compile Include="MainForm1.cs">
