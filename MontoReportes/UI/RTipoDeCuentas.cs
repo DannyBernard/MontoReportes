@@ -92,10 +92,10 @@ namespace MontoReportes.UI
             int id;
             TipoDeCuentas tipo = new TipoDeCuentas();
             int.TryParse(IDnumericUpDown.Text, out id);
-            repositoryBase.Buscar(id);
+           tipo = repositoryBase.Buscar(id);
             if(tipo != null)
             {
-                errorProvider1.Clear();
+               // errorProvider1.Clear();
                 LlenaCampo(tipo);
                 MessageBox.Show("Busqueda Exitosa");
             }

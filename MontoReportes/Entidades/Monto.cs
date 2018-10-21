@@ -16,6 +16,8 @@ namespace MontoReportes.Entidades
         public float monto { get; set; }
         public DateTime FechaDeVencimineto { get; set; }
 
+        public virtual List<CuentaDetalle> Cuentas { get; set; }
+
 
         public Monto()
         {
@@ -24,6 +26,7 @@ namespace MontoReportes.Entidades
             Tipo = string.Empty;
             monto = 0;
             FechaDeVencimineto = DateTime.Now;
+            Cuentas = new List<CuentaDetalle>();
         }
     }
 }

@@ -20,6 +20,14 @@ namespace MontoReportes.Entidades
             this.CuentaID = CuentaID;
             this.TipoCuentas = TipoCuenta;
         }
+
+        public CuentaDetalle()
+        {
+            ID = 0;
+            CuentaID =0;
+            TipoCuentas = string.Empty;
+
+        }
         
     }
 

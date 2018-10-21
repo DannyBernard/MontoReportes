@@ -36,6 +36,7 @@ namespace MontoReportes.UI
             monto.Descripsion = DepcripciontextBox.Text;
             monto.monto = Convert.ToSingle(MontonumericUpDown.Value);
             monto.FechaDeVencimineto = FechadateTimePicker.Value;
+            monto.Cuentas = this.Detalle;
             return monto;
         }
 
@@ -45,6 +46,8 @@ namespace MontoReportes.UI
             DepcripciontextBox.Text = monto.Descripsion;
             MontonumericUpDown.Value = Convert.ToDecimal(monto.monto);
             FechadateTimePicker.Value = monto.FechaDeVencimineto;
+            this.Detalle = monto.Cuentas;
+            CargarGrid();
         }
 
         private bool ExiteEnDb()
