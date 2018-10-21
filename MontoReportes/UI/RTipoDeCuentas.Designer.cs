@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,17 +84,19 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // button3
+            // Guardarbutton
             // 
-            this.button3.Image = global::MontoReportes.Properties.Resources.save;
-            this.button3.Location = new System.Drawing.Point(175, 157);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 60);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Guardar";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button3.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Image = global::MontoReportes.Properties.Resources.save;
+            this.Guardarbutton.Location = new System.Drawing.Point(175, 157);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(80, 60);
+            this.Guardarbutton.TabIndex = 6;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // button4
             // 
@@ -103,6 +108,7 @@
             this.button4.Text = "Eliminar";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Buscarbutton
             // 
@@ -114,6 +120,11 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // RTipoDeCuentas
             // 
@@ -121,7 +132,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 238);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.DescripciontextBox);
@@ -131,6 +142,7 @@
             this.Name = "RTipoDeCuentas";
             this.Text = "RTipoDeCuentas";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +156,8 @@
         private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

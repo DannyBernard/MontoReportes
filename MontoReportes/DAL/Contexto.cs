@@ -11,6 +11,8 @@ namespace MontoReportes.DAL
     class Contexto : DbContext
     {
         public DbSet<Monto> Montos { get; set; }
+        public DbSet<TipoDeCuentas> TipoDeCuentas { get; set; }
+        public DbSet<CuentaDetalle> CuentaDetalles { get; set; }
 
         public Contexto() : base("ConStr")
         {

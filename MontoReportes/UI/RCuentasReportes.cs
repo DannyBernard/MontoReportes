@@ -19,6 +19,8 @@ namespace MontoReportes.UI
         public RCuentasReportes()
         {
             InitializeComponent();
+            this.Detalle = new List<CuentaDetalle>();
+            LlenaComboBox();
         }
         public void Limpiar()
         {
@@ -54,7 +56,7 @@ namespace MontoReportes.UI
         }
         public void LlenaComboBox()
         {
-            RepositoryBase<Monto> repository = new RepositoryBase<Monto>();
+            RepositoryBase<TipoDeCuentas> repository = new RepositoryBase<TipoDeCuentas>();
             TipocomboBox.DataSource = repository.GetList(x => true);
             TipocomboBox.ValueMember = "Descripcion";
         }
@@ -70,6 +72,11 @@ namespace MontoReportes.UI
             if(MontonumericUpDown.Value == 0)
             {
                 errorProvider1.SetError(MontonumericUpDown, "monto debe ser mayor a cero");
+                paso = false;
+            }
+            if (FechadateTimePicker.Value < DateTime.Now)
+            {
+                errorProvider1.SetError(FechadateTimePicker, "Fecha Invalida");
                 paso = false;
             }
             return paso;
